@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack Pro - Your Career Journey Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <span>🎯</span>
+      <span>JobTrack Pro</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <h1>Manage Your Job Hunt Like a Pro</h1>
+  <p>Track applications, organize interviews, and land your dream job with ease</p>
+  <a href="#dashboard" class="cta-button">Get Started Free</a>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <h2 class="section-title">Why Choose JobTrack Pro?</h2>
+    <div class="feature-grid">
+      <div class="feature-card"><div class="feature-icon">📊</div><h3>Visual Analytics</h3><p>Beautiful charts and statistics to track your progress.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔍</div><h3>Smart Search</h3><p>Quickly find any application with powerful filters.</p></div>
+      <div class="feature-card"><div class="feature-icon">📝</div><h3>Detailed Notes</h3><p>Keep track of interview questions and feedback.</p></div>
+      <div class="feature-card"><div class="feature-icon">📅</div><h3>Date Tracking</h3><p>Never miss a deadline with automatic tracking.</p></div>
+      <div class="feature-card"><div class="feature-icon">💾</div><h3>Auto Save</h3><p>Your data is saved locally - no account needed.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎨</div><h3>Clean Interface</h3><p>Beautiful design that makes tracking enjoyable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dashboard" id="dashboard">
+  <div class="container">
+    <h2 class="section-title">Your Dashboard</h2>
+    
+    <div class="stats">
+      <div class="stat-card"><div class="stat-label">Total</div><div class="stat-number" id="total">0</div></div>
+      <div class="stat-card"><div class="stat-label">Applied</div><div class="stat-number" id="applied">0</div></div>
+      <div class="stat-card"><div class="stat-label">Interviews</div><div class="stat-number" id="interview">0</div></div>
+      <div class="stat-card"><div class="stat-label">Offers</div><div class="stat-number" id="offer">0</div></div>
+      <div class="stat-card"><div class="stat-label">Rejected</div><div class="stat-number" id="rejected">0</div></div>
+    </div>
+
+    <div class="form-section">
+      <h2 id="formTitle">Add New Application</h2>
+      <div class="form-grid">
+        <input id="company" placeholder="Company Name *" required>
+        <input id="role" placeholder="Job Role *" required>
+        <input id="location" placeholder="Location">
+        <input id="salary" placeholder="Salary Range">
+        <input id="dateApplied" type="date">
+        <select id="status">
+          <option value="Wishlist">Wishlist</option>
+          <option value="Applied" selected>Applied</option>
+          <option value="Interview">Interview</option>
+          <option value="Offer">Offer</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+        <textarea id="notes" placeholder="Notes (questions, feedback, etc.)"></textarea>
+      </div>
+      <button onclick="addJob()">💾 Save Application</button>
+      <button class="btn-secondary" onclick="cancelEdit()" style="display:none" id="cancelBtn">✖ Cancel</button>
+    </div>
+
+    <div class="controls">
+      <input id="searchBox" placeholder="🔍 Search..." onkeyup="searchJobs()">
+      <select id="filterStatus" onchange="filterJobs()">
+        <option value="">All Statuses</option>
+        <option value="Wishlist">Wishlist</option>
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+
+    <div class="job-list" id="jobList"></div>
+
+    <div class="charts">
+      <div class="chart-container"><h3>📊 Distribution</h3><div class="chart-wrapper"><canvas id="pieChart"></canvas></div></div>
+      <div class="chart-container"><h3>📈 Status Breakdown</h3><div class="chart-wrapper"><canvas id="barChart"></canvas></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <p>©  JobTrack Pro. Built for job seekers by vanshaj.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
