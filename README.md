@@ -1,5 +1,5 @@
 
-# 🎯 JobTrack Pro - https://devpvansh001.github.io/JobTrack-Pro/
+# 🎯 JobTrack Pro - https://team-shadow-1989.github.io/JOB-TRACKER/
 
 **JobTrack Pro** is a clean, lightweight, and local-first job application management system. It helps job seekers stay organized by tracking every stage of their career journey—from the initial wishlist to the final offer—without requiring an account or a database.
 
